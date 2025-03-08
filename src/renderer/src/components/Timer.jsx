@@ -13,17 +13,17 @@ export default function Timer() {
         <div className="flex justify-center">
           <div>
             <InputField
-              label="Hours"
+              label="Horas"
               value={hours}
               onChange={(e) => setHours(parseInt(e.target.value))}
             />
             <InputField
-              label="Minutes"
+              label="Minutos"
               value={minutes}
               onChange={(e) => setMinutes(parseInt(e.target.value))}
             />
             <InputField
-              label="Seconds"
+              label="Segundos"
               value={seconds}
               onChange={(e) => setSeconds(parseInt(e.target.value))}
             />
