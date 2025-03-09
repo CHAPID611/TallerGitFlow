@@ -42,6 +42,16 @@ export default function Timer() {
     setIsEditing(true)
   }
 
+  const resetTimer = () => {
+    clearInterval(intervalRef.current)
+    setIsRunning(false)
+    setIsEditing(true)
+    setHours(0)
+    setMinutes(1)
+    setSeconds(0)
+    setTimeLeft(0)
+  }
+
   const formatTime = (totalSeconds) => {
     const h = Math.floor(totalSeconds / 3600)
     const m = Math.floor((totalSeconds % 3600) / 60)
@@ -109,11 +119,15 @@ export default function Timer() {
                 Detener
               </button>
             )}
+            <button
+              onClick={resetTimer}
+              className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+            >
+              Reiniciar
+            </button>
           </div>
         </div>
       )}
     </div>
-    
   )
-
 }
